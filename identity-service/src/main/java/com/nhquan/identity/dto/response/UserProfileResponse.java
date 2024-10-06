@@ -1,19 +1,21 @@
-package com.nhquan.profile.dto.request;
-
-import java.time.LocalDate;
+package com.nhquan.identity.dto.response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
+import java.util.Set;
+
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProfileCreationRequest {
-    String userId;
+public class UserProfileResponse {
+    String id;
+    String username;
     String firstName;
     String lastName;
     LocalDate dob;
-    String city;
+    Set<RoleResponse> roles;
 }
